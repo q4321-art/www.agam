@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url('coding.jpg') no-repeat center center/cover;
+            color: rgb(249, 244, 244);
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 0%;
+            border: 3px solid white;
+            margin-bottom: 15px;
+        }
+        .slide-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="27..jpg" class="profile-img" alt="Profile">
+        <h1>Agam Al Hakim Hasibuan</h1>
+        <p>Hanya Seorang Mahasiswa yang ingin mencari pengalaman di bidang informatika</p>
+        
+        <div class="slide-container">
+            <div class="slide active"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah seorang mahasiswa universitas pahlawan tuanku tambusai yang bertempat di bangkinang kab kampar kec tapung riau.
+           saya memiliki semangat tinggi dalam menciptakan website yang interaktif dan menarik yang bermanfaat bagi setiap orang.</p>
+
+    </div>
+    
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let index = 0;
+
+        function showSlide() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            index = (index + 1) % slides.length;
+        }
+
+        setInterval(showSlide, 3000);
+    </script>
+</body>
+</html>
